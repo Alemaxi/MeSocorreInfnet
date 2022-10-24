@@ -1,10 +1,10 @@
 package br.edu.infnet.mesocorre.model.domain;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class Clinica extends UnidadeSaude {
 	
-	public List<String> especialidades;
+	public ArrayList<String> especialidades;
 	public int horaAbertura;
 	public int horaFechamento;
 }

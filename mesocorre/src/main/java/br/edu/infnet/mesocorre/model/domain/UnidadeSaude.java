@@ -5,4 +5,10 @@ public abstract class UnidadeSaude {
 	public String endereco;
 	public String nome;
 	public String linkFoto;
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return this.nome + ";" + this.endereco + ";" + this.id;
+	}
 }
