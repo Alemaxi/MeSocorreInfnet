@@ -11,6 +11,8 @@ public class BuscaHospitalTest implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
+		System.out.println("Busca");
+		
 		// TODO Auto-generated method stub
 		BuscaHospital busca1 = new BuscaHospital();
 		busca1.enderecoBusca = "end1";

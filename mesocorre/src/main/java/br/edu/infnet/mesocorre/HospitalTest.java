@@ -10,25 +10,33 @@ public class HospitalTest implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
+		System.out.println("Hospital");
+		
 		// TODO Auto-generated method stub
 		Hospital h1 = new Hospital();
-		h1.nome = "nome1";
-		h1.endereco = "end1";
-		h1.id = 1;
+		h1.setNome("nome1");
+		h1.setEndereco("end1");
+		h1.setId(1);
+		h1.emergencia = true;
+		h1.internacao = true;
 		System.out.println(h1);
 		
 		
 		Hospital h2 = new Hospital();
-		h2.nome = "nome2";
-		h2.endereco = "end2";
-		h2.id = 2;
+		h2.setNome("nome2");
+		h2.setEndereco("end2");
+		h2.setId(2);
+		h2.emergencia = true;
+		h2.internacao = true;
 		System.out.println(h2);
 		
 		
 		Hospital h3 = new Hospital();
-		h3.nome = "nome3";
-		h3.endereco = "end3";
-		h3.id = 3;
+		h3.setNome("nome3");
+		h3.setEndereco("end3");
+		h3.setId(3);
+		h3.emergencia = true;
+		h3.internacao = true;
 		System.out.println(h3);
 	}
 
