@@ -5,6 +5,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.mesocorre.model.domain.Laboratorio;
+import br.edu.infnet.mesocorre.model.domain.Plano;
 
 @Component
 public class LaboratorioTest implements ApplicationRunner {

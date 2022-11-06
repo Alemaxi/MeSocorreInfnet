@@ -1,10 +1,14 @@
 package br.edu.infnet.mesocorre.model.domain;
 
+import java.util.ArrayList;
+
 public abstract class UnidadeSaude {
 	private int id;
 	private String endereco;
 	private String nome;
 	
+	
+
 	public int getId() {
 		return id;
 	}
