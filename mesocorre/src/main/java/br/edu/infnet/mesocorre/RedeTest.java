@@ -4,6 +4,7 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import br.edu.infnet.mesocorre.controller.RedeController;
 import br.edu.infnet.mesocorre.model.domain.Rede;
 
 @Component
@@ -22,6 +23,10 @@ public class RedeTest implements ApplicationRunner {
 		
 		Rede r3 = new Rede(1,"Rede 1", "202020");
 		System.out.println(r3);
+		
+		RedeController.AddRede(r1);
+		RedeController.AddRede(r2);
+		RedeController.AddRede(r3);
 	}
 
 }
