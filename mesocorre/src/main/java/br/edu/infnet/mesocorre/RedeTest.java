@@ -1,15 +1,20 @@
 package br.edu.infnet.mesocorre;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.mesocorre.controller.RedeController;
 import br.edu.infnet.mesocorre.model.domain.Rede;
+import br.edu.infnet.mesocorre.model.service.RedeService;
+
 
 @Component
 public class RedeTest implements ApplicationRunner {
 
+	@Autowired
+	private RedeService redeService;
+	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		System.out.println("Rede");
@@ -24,9 +29,9 @@ public class RedeTest implements ApplicationRunner {
 		Rede r3 = new Rede(1,"Rede 1", "202020");
 		System.out.println(r3);
 		
-		RedeController.AddRede(r1);
-		RedeController.AddRede(r2);
-		RedeController.AddRede(r3);
+		redeService.AddRede(r1);
+		redeService.AddRede(r2);
+		redeService.AddRede(r3);
 	}
 
 }

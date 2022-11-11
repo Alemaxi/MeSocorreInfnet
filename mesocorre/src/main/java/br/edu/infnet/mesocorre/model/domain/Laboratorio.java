@@ -2,6 +2,9 @@ package br.edu.infnet.mesocorre.model.domain;
 
 import java.util.ArrayList;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Laboratorio extends UnidadeSaude {
 	private int horaAbertura;
 	private int horaFechamento;

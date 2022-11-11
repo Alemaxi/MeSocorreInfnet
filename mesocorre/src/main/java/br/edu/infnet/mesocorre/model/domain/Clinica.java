@@ -2,19 +2,25 @@ package br.edu.infnet.mesocorre.model.domain;
 
 import java.util.ArrayList;
 
+import javax.persistence.Entity;
+
+
+
+@Entity
 public class Clinica extends UnidadeSaude {
 	
-	private ArrayList<String> especialidades;
+
+	//private ArrayList<String> especialidades;
 	private int abertura;
 	private int fechamento;
 	
-	public ArrayList<String> getEspecialidades() {
+	/*public ArrayList<String> getEspecialidades() {
 		return especialidades;
 	}
 
 	public void setEspecialidades(ArrayList<String> especialidades) {
 		this.especialidades = especialidades;
-	}
+	}*/
 
 	public int getAbertura() {
 		return abertura;

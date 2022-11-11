@@ -1,14 +1,19 @@
 package br.edu.infnet.mesocorre;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.mesocorre.controller.HospitalController;
 import br.edu.infnet.mesocorre.model.domain.Hospital;
+import br.edu.infnet.mesocorre.model.service.HospitalService;
 
 @Component
 public class HospitalTest implements ApplicationRunner {
+	
+	@Autowired
+	private HospitalService hospitalService;
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
@@ -41,9 +46,9 @@ public class HospitalTest implements ApplicationRunner {
 		h3.setInternacao(true);
 		System.out.println(h3);
 		
-		HospitalController.AddHospital(h1);
-		HospitalController.AddHospital(h2);
-		HospitalController.AddHospital(h3);
+		hospitalService.AddHospital(h1);
+		hospitalService.AddHospital(h2);
+		hospitalService.AddHospital(h3);
 	}
 
 }

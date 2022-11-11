@@ -6,45 +6,32 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import br.edu.infnet.mesocorre.model.domain.Rede;
+import br.edu.infnet.mesocorre.model.service.RedeService;
 
 @Controller
 public class RedeController {
 	
-	private static Map<Integer,Rede> mapa = new HashMap<Integer,Rede>();
-	
-	private static int id = 0;
-	
-	public static void AddRede(Rede rede) {
-		rede.setId(++id);
-		
-		mapa.put(id, rede);
-	}
-	
-	public static void ExcluirUm(Integer id) {
-		mapa.remove(id);
-	}
-	
-	public static Collection<Rede> GetCollection(){
-		return mapa.values();
-	}
+	@Autowired
+	private RedeService redeService;
 	
 	@GetMapping(value = "/rede/lista")
 	public String telaLista(Model model) {
 		
-		model.addAttribute("listagem",GetCollection());
+		model.addAttribute("listagem", redeService.GetCollection());
 		return "rede/lista";
 	}
 	
 	@GetMapping(value = "/rede/{id}/excluir")
 	public String Excluir(@PathVariable Integer id )
 	{
-		ExcluirUm(id);
+		redeService.ExcluirUm(id);
 		return "redirect:/rede/lista";
 	}
 

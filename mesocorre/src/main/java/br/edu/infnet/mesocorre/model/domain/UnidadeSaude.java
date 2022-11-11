@@ -1,8 +1,17 @@
 package br.edu.infnet.mesocorre.model.domain;
 
-import java.util.ArrayList;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+@Entity
 public abstract class UnidadeSaude {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String endereco;
 	private String nome;

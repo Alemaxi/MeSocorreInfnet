@@ -2,6 +2,12 @@ package br.edu.infnet.mesocorre.model.domain;
 
 import java.util.ArrayList;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
 public class Plano {
 	
 	public Plano() {
@@ -12,14 +18,16 @@ public class Plano {
 		this.id = id;
 		this.nome = nome;
 		this.acomodacao = acomodacao;
-		this.rede = rede;
+		//this.rede = rede;
 		this.unidades = unidades;
 	}
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String nome;
 	private String acomodacao;
-	private Rede rede;
+	//private Rede rede;
 	private ArrayList<UnidadeSaude> unidades;
 	
 	
@@ -55,17 +63,17 @@ public class Plano {
 		this.acomodacao = acomodacao;
 	}
 
-	public Rede getRede() {
+	/*public Rede getRede() {
 		return rede;
 	}
 
 	public void setRede(Rede rede) {
 		this.rede = rede;
-	}
+	}*/
 
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return this.id + ";" + this.nome + ";" + this.acomodacao + ";" + rede + ";" + unidades.size();
+		return this.id + ";" + this.nome + ";" + this.acomodacao + ";"  + ";" + unidades.size();
 	}
 }

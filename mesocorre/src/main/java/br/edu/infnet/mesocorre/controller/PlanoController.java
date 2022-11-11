@@ -6,45 +6,32 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import br.edu.infnet.mesocorre.model.domain.Plano;
+import br.edu.infnet.mesocorre.model.service.PlanoService;
 
 @Controller
 public class PlanoController {
 	
-	private static Map<Integer,Plano> mapa = new HashMap<Integer,Plano>();
-	
-	private static int id = 0;
-	
-	public static void AddPlano(Plano plano) {
-		plano.setId(++id);
-		
-		mapa.put(id, plano);
-	}
-	
-	public static Collection<Plano> GetCollection(){
-		return mapa.values();
-	}
-	
-	public static void ExcluirUm(Integer id) {
-		mapa.remove(id);
-	}
+	@Autowired
+	private PlanoService planoService;
 	
 	@GetMapping(value = "/plano/lista")
 	public String telaLista(Model model) {
 		
-		model.addAttribute("listagem", GetCollection());
+		model.addAttribute("listagem", planoService.GetCollection());
 		return "plano/lista";
 	}
 	
 	@GetMapping(value = "/plano/{id}/excluir")
 	public String Excluir(@PathVariable Integer id )
 	{
-		ExcluirUm(id);
+		planoService.ExcluirUm(id);
 		return "redirect:/plano/lista";
 	}
 

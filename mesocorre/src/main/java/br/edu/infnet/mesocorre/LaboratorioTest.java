@@ -1,5 +1,6 @@
 package br.edu.infnet.mesocorre;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
@@ -7,10 +8,14 @@ import org.springframework.stereotype.Component;
 import br.edu.infnet.mesocorre.controller.LaboratorioController;
 import br.edu.infnet.mesocorre.model.domain.Laboratorio;
 import br.edu.infnet.mesocorre.model.domain.Plano;
+import br.edu.infnet.mesocorre.model.service.LaboratorioService;
 
 @Component
 public class LaboratorioTest implements ApplicationRunner {
 
+	@Autowired
+	private LaboratorioService laboratorioService;
+	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		System.out.println("Laboratório");
@@ -40,9 +45,9 @@ public class LaboratorioTest implements ApplicationRunner {
 		l1.setHoraFechamento(17);	
 		System.out.println(l3);
 		
-		LaboratorioController.AddLab(l1);
-		LaboratorioController.AddLab(l2);
-		LaboratorioController.AddLab(l3);
+		laboratorioService.AddLab(l1);
+		laboratorioService.AddLab(l2);
+		laboratorioService.AddLab(l3);
 	}
 
 }

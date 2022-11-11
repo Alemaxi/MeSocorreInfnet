@@ -3,6 +3,7 @@ package br.edu.infnet.mesocorre;
 import java.time.temporal.TemporalUnit;
 import java.util.ArrayList;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
@@ -14,9 +15,13 @@ import br.edu.infnet.mesocorre.model.domain.Laboratorio;
 import br.edu.infnet.mesocorre.model.domain.Plano;
 import br.edu.infnet.mesocorre.model.domain.Rede;
 import br.edu.infnet.mesocorre.model.domain.UnidadeSaude;
+import br.edu.infnet.mesocorre.model.service.PlanoService;
 
 @Component
 public class PlanoTest implements ApplicationRunner{
+	
+	@Autowired
+	private PlanoService planoService;
 	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
@@ -24,8 +29,8 @@ public class PlanoTest implements ApplicationRunner{
 		
 		Clinica c1 = new Clinica();
 		c1.setEndereco("end1");
-		c1.setEspecialidades(new ArrayList<String>());
-		c1.getEspecialidades().add("esp2");
+		//c1.setEspecialidades(new ArrayList<String>());
+		//c1.getEspecialidades().add("esp2");
 		c1.setAbertura(8);
 		c1.setFechamento(22);
 		c1.setId(1);
@@ -58,9 +63,9 @@ public class PlanoTest implements ApplicationRunner{
 		Plano p2 = new Plano(2,"plano 2", "endereco 2",r1,tempUnidades);
 		Plano p3 = new Plano(3,"plano 3", "endereco 3",r1,tempUnidades);
 		
-		PlanoController.AddPlano(p1);
-		PlanoController.AddPlano(p2);
-		PlanoController.AddPlano(p3);
+		planoService.AddPlano(p1);
+		planoService.AddPlano(p2);
+		planoService.AddPlano(p3);
 		
 		System.out.println(p1);
 		System.out.println(p2);
