@@ -9,6 +9,9 @@
 <title>Cadastramento de hospitais</title>
 </head>
 <body>
+
+	<c:import url="/WEB-INF/jsp/menu.jsp" />
+
 	<div class="w3-container">
 		<h3>Lista de hospitais</h3>
 	</div>
@@ -22,12 +25,12 @@
 		</tr>
 		<c:forEach var="hosp" items="${listagem}">
 			<tr>
-			<td>${hosp.nome}</td>
-			<td>${hosp.endereco}</td>
-			<td>${hosp.emergencia }</td>
-			<td>${hosp.internacao }</td>
-			<td><a href="/hospital/${hosp.id }/excluir">Excluir</a></td>
-		</tr>
+				<td>${hosp.nome}</td>
+				<td>${hosp.endereco}</td>
+				<td>${hosp.emergencia }</td>
+				<td>${hosp.internacao }</td>
+				<td><a href="/hospital/${hosp.id }/excluir">Excluir</a></td>
+			</tr>
 		</c:forEach>
 	</table>
 </body>

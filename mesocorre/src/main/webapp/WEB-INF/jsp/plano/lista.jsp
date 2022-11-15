@@ -9,6 +9,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+	<c:import url="/WEB-INF/jsp/menu.jsp" />
+
 	<div class="w3-container">
 		<h3>Lista de planos</h3>
 	</div>
@@ -21,12 +24,13 @@
 		</tr>
 		<c:forEach var="plano" items="${listagem}">
 			<tr>
-			<td>${plano.nome}</td>
-			<td>${plano.acomodacao}</td>
-			<td>${plano.rede.nome }</td>
-			<td><a href="/plano/${plano.id }/excluir">Excluir</a></td>
-		</tr>
+				<td>${plano.nome}</td>
+				<td>${plano.acomodacao}</td>
+				<td><a href="/plano/${plano.id }/excluir">Excluir</a></td>
+			</tr>
 		</c:forEach>
 	</table>
+	
+	<a href="/plano/incluir">incluir</a>
 </body>
 </html>

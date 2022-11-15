@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,7 @@ import br.edu.infnet.mesocorre.model.repository.HospitalRepository;
 @Service
 public class HospitalService {
 	
+	@Autowired
 	private HospitalRepository repository;
 	
 

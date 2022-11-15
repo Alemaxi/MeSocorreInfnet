@@ -9,6 +9,9 @@
 <title>Cadastramento de clientes</title>
 </head>
 <body>
+
+	<c:import url="/WEB-INF/jsp/menu.jsp" />
+
 	<div class="w3-container">
 		<h3>Lista de clientes</h3>
 	</div>
@@ -24,12 +27,12 @@
 		</tr>
 		<c:forEach var="clinica" items="${Listagem}">
 			<tr>
-			<td>${clinica.nome}</td>
-			<td>${clinica.endereco}</td>
-			<td>${clinica.abertura }</td>
-			<td>${clinica.fechamento }</td>
-			<td><a href="/clinica/${clinica.id }/excluir">Excluir</a></td>
-		</tr>
+				<td>${clinica.nome}</td>
+				<td>${clinica.endereco}</td>
+				<td>${clinica.abertura }</td>
+				<td>${clinica.fechamento }</td>
+				<td><a href="/clinica/${clinica.id }/excluir">Excluir</a></td>
+			</tr>
 		</c:forEach>
 	</table>
 </body>

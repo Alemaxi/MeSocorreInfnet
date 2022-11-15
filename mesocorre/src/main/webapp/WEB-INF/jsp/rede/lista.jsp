@@ -9,6 +9,9 @@
 <title>Cadastramento de redes</title>
 </head>
 <body>
+
+	<c:import url="/WEB-INF/jsp/menu.jsp" />
+
 	<div class="w3-container">
 		<h3>Lista de redes</h3>
 	</div>

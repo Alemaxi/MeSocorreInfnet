@@ -5,11 +5,13 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.mesocorre.controller.ClinicaController;
 import br.edu.infnet.mesocorre.model.domain.Clinica;
 import br.edu.infnet.mesocorre.model.service.ClinicaService;
+
 
 @Component
 public class ClinicaTest implements ApplicationRunner {

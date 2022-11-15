@@ -10,14 +10,7 @@
 </head>
 <body>
 
-	<div class="w3-bar w3-blue-grey">
-		<a href="/" class="w3-bar-item w3-button">MeSocorre</a> <a
-			href="/clinica/lista" class="w3-bar-item w3-button">Clinica</a> <a
-			href="/hospital/lista" class="w3-bar-item w3-button">Hospital</a> <a
-			href="/laboratorio/lista" class="w3-bar-item w3-button">Laboratório</a>
-		<a href="/plano/lista" class="w3-bar-item w3-button">Plano</a> <a
-			href="/rede/lista" class="w3-bar-item w3-button">Rede</a>
-	</div>
+	<c:import url="/WEB-INF/jsp/menu.jsp" />
 
 </body>
 </html>

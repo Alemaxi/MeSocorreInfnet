@@ -1,16 +1,17 @@
 package br.edu.infnet.mesocorre.model.domain;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
-import org.springframework.stereotype.Component;
-
-
+@Entity
 public class Rede {
 	
 	public Rede() {
@@ -28,19 +29,21 @@ public class Rede {
 	private int id;
 	private String nome;
 	private String telefone;
-	//private List<Plano> planos = new ArrayList<Plano>();
+	
+	@OneToMany(cascade = CascadeType.PERSIST)
+	private List<Plano> planos;
 	
 	public int getId() {
 		return id;
 	}
 
-	/*public List<Plano> getPlanos() {
+	public List<Plano> getPlanos() {
 		return planos;
 	}
 
 	public void setPlanos(List<Plano> planos) {
 		this.planos = planos;
-	}*/
+	}
 
 	public void setId(int id) {
 		this.id = id;

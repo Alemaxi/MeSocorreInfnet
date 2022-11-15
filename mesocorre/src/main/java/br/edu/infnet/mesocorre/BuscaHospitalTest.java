@@ -2,9 +2,11 @@ package br.edu.infnet.mesocorre;
 
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.mesocorre.model.domain.BuscaHospital;
+
 
 @Component
 public class BuscaHospitalTest implements ApplicationRunner {
