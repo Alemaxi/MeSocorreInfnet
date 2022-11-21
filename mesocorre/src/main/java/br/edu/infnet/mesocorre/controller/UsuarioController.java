@@ -19,7 +19,7 @@ public class UsuarioController {
 	private UsuarioService service;
 	
 	@GetMapping(value = "/usuario/lista")
-	public String telaLista(Model model) {
+	public String GetLista(Model model) {
 		
 		model.addAttribute("listagem", service.GetCollection());
 		

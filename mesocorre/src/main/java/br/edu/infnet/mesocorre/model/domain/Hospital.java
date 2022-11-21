@@ -1,24 +1,10 @@
 package br.edu.infnet.mesocorre.model.domain;
 
-import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-@Entity
 public class Hospital extends UnidadeSaude {
 	
 	private boolean emergencia;
-	//private List<String> especialidades;
 	private boolean internacao;
-	
-	@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString() + ";Emergencia:" + this.emergencia + ";Internação:" + this.internacao;
-	}
 
 	public boolean isEmergencia() {
 		return emergencia;
@@ -27,14 +13,6 @@ public class Hospital extends UnidadeSaude {
 	public void setEmergencia(boolean emergencia) {
 		this.emergencia = emergencia;
 	}
-
-	/*public List<String> getEspecialidades() {
-		return especialidades;
-	}
-
-	public void setEspecialidades(List<String> especialidades) {
-		this.especialidades = especialidades;
-	}*/
 
 	public boolean isInternacao() {
 		return internacao;

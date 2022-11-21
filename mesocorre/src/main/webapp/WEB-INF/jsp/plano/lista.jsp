@@ -26,6 +26,7 @@
 			<tr>
 				<td>${plano.nome}</td>
 				<td>${plano.acomodacao}</td>
+				<td>${plano.rede.id }</td>
 				<td><a href="/plano/${plano.id }/excluir">Excluir</a></td>
 			</tr>
 		</c:forEach>

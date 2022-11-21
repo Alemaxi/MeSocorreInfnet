@@ -18,8 +18,10 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import br.edu.infnet.mesocorre.model.domain.Plano;
+import br.edu.infnet.mesocorre.model.domain.Rede;
 import br.edu.infnet.mesocorre.model.domain.Usuario;
 import br.edu.infnet.mesocorre.model.service.PlanoService;
+import br.edu.infnet.mesocorre.model.service.RedeService;
 import br.edu.infnet.mesocorre.model.service.UsuarioService;
 
 @Controller
@@ -27,6 +29,9 @@ public class PlanoController {
 
 	@Autowired
 	private PlanoService planoService;
+	
+	@Autowired
+	private RedeService redeService;
 	
 	@Autowired
 	private UsuarioService usuarioService;
@@ -45,20 +50,26 @@ public class PlanoController {
 	}
 	
 	@GetMapping(value = "/plano/incluir")
-	public String incluir() {
+	public String incluir(Model model) {
+		
+		model.addAttribute("redes",redeService.GetCollection());
+		
 		return "plano/cadastro";
 	}
 	
 	@PostMapping(value = "/plano/incluir")
-	public String incluirPost(Plano plano,SessionStatus status, HttpSession session) {
+	public String incluirPost(Plano plano, Integer rede,SessionStatus status, HttpSession session) {
 		
 		if(status.isComplete()) {
 			return "redirect:/plano/cadastro";
 		}
 		
+		Rede redeTemp = redeService.findById(rede);
+		
 		Usuario usuario = (Usuario) session.getAttribute("user");
 		
 		plano.setUsuario(usuario);
+		plano.setRede(redeTemp);
 		
 		planoService.Add(plano);
 		

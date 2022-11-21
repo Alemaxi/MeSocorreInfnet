@@ -20,6 +20,12 @@
 		<input class="w3-input w3-border w3-light-grey" type="text" name="nome"> 
 		<label class="w3-text-teal"><b>Acomodação</b></label> 
 		<input class="w3-input w3-border w3-light-grey" type="text" name="acomodacao">
+		<label class="w3-text-teal">Redes</label>
+		<select name="rede">
+			<c:forEach var="rede" items="${redes}">
+				<option value=${rede.id}>${rede.nome}</option>
+			</c:forEach>
+		</select>
 
 		<button class="w3-btn w3-blue-grey">Register</button>
 	</form>

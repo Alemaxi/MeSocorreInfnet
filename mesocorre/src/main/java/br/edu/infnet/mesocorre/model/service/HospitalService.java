@@ -1,32 +1,28 @@
 package br.edu.infnet.mesocorre.model.service;
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
+import br.edu.infnet.mesocorre.clients.IHospitalClient;
 import br.edu.infnet.mesocorre.model.domain.Hospital;
-import br.edu.infnet.mesocorre.model.repository.HospitalRepository;
 
 @Service
 public class HospitalService {
 	
 	@Autowired
-	private HospitalRepository repository;
-	
+	IHospitalClient client;
 
 	public void AddHospital(Hospital hospital) {
-		repository.save(hospital);
+		client.incluir(hospital);
 	}
 
 	public Collection<Hospital> GetCollection() {
-		return (Collection<Hospital>) repository.findAll();
+		return client.listaHospital();
 	}
 
 	public void ExcluirUm(Integer id) {
-		repository.deleteById(id);
+		client.excluirHospital(id);
 	}
 }

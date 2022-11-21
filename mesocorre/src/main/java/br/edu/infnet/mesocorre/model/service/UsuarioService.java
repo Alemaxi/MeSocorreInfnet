@@ -1,44 +1,39 @@
 package br.edu.infnet.mesocorre.model.service;
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.edu.infnet.mesocorre.model.domain.Clinica;
+import br.edu.infnet.mesocorre.clients.IUsuarioClient;
 import br.edu.infnet.mesocorre.model.domain.Usuario;
-import br.edu.infnet.mesocorre.model.repository.ClinicaRepository;
-import br.edu.infnet.mesocorre.model.repository.UsuarioRepository;
 
 @Service
 public class UsuarioService {
 	
 	@Autowired
-	private UsuarioRepository repository;
+	private IUsuarioClient client;
 	
 	public void Add(Usuario usuario) {
-		repository.save(usuario);
+		client.Incluir(usuario);
 	}
 	
 	public Collection<Usuario> GetCollection(){
-		return (Collection<Usuario>) repository.findAll();
+		return client.Listar();
 	}
 	
 	public void ExcluirUm(Integer id) {
-		repository.deleteById(id);
+		client.Excluir(id);
 	}
 	
 	public Usuario BuscarUm(Integer id) {
-		return repository.findById(id).get();
+		return null;
 	}
 	
 	public Usuario Validar(String email, String senha) {
-		Usuario usuario = repository.findByEmail(email);
+		Usuario usuario = client.Validar(email);
 		
-		if(usuario != null && senha.equals(usuario.getSenha())) {
+		if(usuario != null) {
 			return usuario;
 		}
 		

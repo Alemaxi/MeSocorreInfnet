@@ -1,12 +1,8 @@
 package br.edu.infnet.mesocorre.model.domain;
 
-import java.util.ArrayList;
-
-import javax.persistence.Entity;
 
 
 
-@Entity
 public class Clinica extends UnidadeSaude {
 	
 
@@ -36,11 +32,5 @@ public class Clinica extends UnidadeSaude {
 
 	public void setFechamento(int fechamento) {
 		this.fechamento = fechamento;
-	}
-
-	@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString() + ";Abertura:" + this.abertura + ";Fechamento:" + this.fechamento;
 	}
 }

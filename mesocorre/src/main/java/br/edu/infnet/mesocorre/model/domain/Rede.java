@@ -2,16 +2,7 @@ package br.edu.infnet.mesocorre.model.domain;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
-@Entity
 public class Rede {
 	
 	public Rede() {
@@ -24,13 +15,10 @@ public class Rede {
 		this.telefone = telefone;
 	}
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String nome;
 	private String telefone;
 	
-	@OneToMany(cascade = CascadeType.PERSIST)
 	private List<Plano> planos;
 	
 	public int getId() {

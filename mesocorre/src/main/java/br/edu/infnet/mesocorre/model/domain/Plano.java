@@ -1,20 +1,10 @@
 package br.edu.infnet.mesocorre.model.domain;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 
-@Entity
 public class Plano {
 	
 	public Plano() {
@@ -29,20 +19,17 @@ public class Plano {
 		this.unidades = unidades;
 	}
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String nome;
 	private String acomodacao;
 	
-	@ManyToOne
+
 	private Rede rede;
 	
-	@OneToMany
+
 	private List<UnidadeSaude> unidades = new ArrayList<>();
 	
-	@ManyToOne
-	@JoinColumn(name="usuario_id")
+
 	private Usuario usuario;
 	
 	
@@ -61,10 +48,6 @@ public class Plano {
 
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
-	}
-
-	public void setUnidades(List<UnidadeSaude> unidades) {
-		this.unidades = unidades;
 	}
 
 	public int getId() {

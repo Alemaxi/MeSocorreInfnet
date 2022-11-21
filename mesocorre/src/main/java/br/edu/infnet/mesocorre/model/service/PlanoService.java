@@ -1,37 +1,34 @@
 package br.edu.infnet.mesocorre.model.service;
 
 import java.util.Collection;
-import java.util.HashMap;
+
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.edu.infnet.mesocorre.model.domain.Laboratorio;
+import br.edu.infnet.mesocorre.clients.IPlanoClient;
 import br.edu.infnet.mesocorre.model.domain.Plano;
-import br.edu.infnet.mesocorre.model.repository.LaboratorioRepository;
-import br.edu.infnet.mesocorre.model.repository.PlanoRepository;
 
 @Service
 public class PlanoService {
 	
 	@Autowired
-	private PlanoRepository repository;
+	private IPlanoClient planoClient; 
 
-	public void Add(Plano lab) {
-		repository.save(lab);
+	public void Add(Plano plano) {
+		planoClient.incluir(plano);
 	}
 
 	public Collection<Plano> GetCollection() {
-		return (Collection<Plano>) repository.findAll();
+		return planoClient.BuscarTodos();
 	}
 
 	public void ExcluirUm(Integer id) {
-		repository.deleteById(id);
+		planoClient.Excluir(id);
 	}
 	
 	public List<Plano> GetByUsuarioId(Integer id) {
-		return repository.findByUsuarioId(id);
+		return planoClient.searchForIdUsuario(id);
 	}
 }
