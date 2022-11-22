@@ -30,7 +30,7 @@ public class UsuarioController {
 	public String Excluir(@PathVariable Integer id )
 	{
 		service.ExcluirUm(id);
-		return "redirect:/clinica/lista";
+		return "redirect:/usuario/lista";
 	}
 	
 	@GetMapping(value = "/usuario/cadastro")

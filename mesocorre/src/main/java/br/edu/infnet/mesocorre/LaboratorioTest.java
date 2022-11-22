@@ -27,7 +27,6 @@ public class LaboratorioTest implements ApplicationRunner {
 		l1.setEndereco("endereco 1");
 		l1.setHoraAbertura(9);
 		l1.setHoraFechamento(17);
-		System.out.println(l1);
 		
 		Laboratorio l2 = new Laboratorio();
 		l2.setId(2);

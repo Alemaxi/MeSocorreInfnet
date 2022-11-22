@@ -7,32 +7,36 @@ import java.util.List;
 
 public class Plano {
 	
-	public Plano() {
-		
-	}
-	
-	public Plano(int id, String nome, String acomodacao, Rede rede,ArrayList<UnidadeSaude> unidades) {
-		this.id = id;
-		this.nome = nome;
-		this.acomodacao = acomodacao;
-		this.rede = rede;
-		this.unidades = unidades;
-	}
-	
 	private int id;
 	private String nome;
 	private String acomodacao;
-	
-
+	private Integer idRede;
+	private Integer idUsuario;
 	private Rede rede;
-	
+	private Usuario usuario;
 
 	private List<UnidadeSaude> unidades = new ArrayList<>();
 	
 
-	private Usuario usuario;
-	
-	
+	public Integer getIdRede() {
+		return idRede;
+	}
+
+	public void setIdRede(Integer idRede) {
+		this.idRede = idRede;
+	}
+
+	public Integer getIdUsuario() {
+		return idUsuario;
+	}
+
+	public void setIdUsuario(Integer idUsuario) {
+		this.idUsuario = idUsuario;
+	}
+
+	public void setUnidades(List<UnidadeSaude> unidades) {
+		this.unidades = unidades;
+	}
 
 	public Rede getRede() {
 		return rede;
@@ -64,10 +68,6 @@ public class Plano {
 
 	public List<UnidadeSaude> getUnidades() {
 		return unidades;
-	}
-
-	public void setUnidades(ArrayList<UnidadeSaude> unidades) {
-		this.unidades = unidades;
 	}
 
 	public void setNome(String nome) {

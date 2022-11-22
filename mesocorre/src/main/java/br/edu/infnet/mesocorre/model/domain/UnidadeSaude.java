@@ -7,10 +7,18 @@ public abstract class UnidadeSaude {
 	private int id;
 	private String endereco;
 	private String nome;
+	private Integer idPlano;
 	
 	private Plano plano;
 	
 	
+	public Integer getIdPlano() {
+		return idPlano;
+	}
+
+	public void setIdPlano(Integer idPlano) {
+		this.idPlano = idPlano;
+	}
 	
 	public Plano getPlano() {
 		return plano;

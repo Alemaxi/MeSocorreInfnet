@@ -35,17 +35,12 @@ public class PlanoController {
 	
 	@Autowired
 	private UsuarioService usuarioService;
+	
 
 	@GetMapping(value = "/plano/lista")
 	public String telaLista(Model model, SessionStatus status, HttpSession session) {
 
-		if (status.isComplete()) {
-			return "redirect:/";
-		}
-
-		Usuario usuario = (Usuario) session.getAttribute("user");
-
-		model.addAttribute("listagem", usuarioService.BuscarUm(usuario.getId()).getPlano());
+		model.addAttribute("listagem", planoService.GetCollection());
 		return "plano/lista";
 	}
 	
@@ -54,22 +49,17 @@ public class PlanoController {
 		
 		model.addAttribute("redes",redeService.GetCollection());
 		
+		model.addAttribute("usuarios",usuarioService.GetCollection());
+		
 		return "plano/cadastro";
 	}
 	
 	@PostMapping(value = "/plano/incluir")
-	public String incluirPost(Plano plano, Integer rede,SessionStatus status, HttpSession session) {
+	public String incluirPost(Plano plano,SessionStatus status, HttpSession session) {
 		
 		if(status.isComplete()) {
 			return "redirect:/plano/cadastro";
 		}
-		
-		Rede redeTemp = redeService.findById(rede);
-		
-		Usuario usuario = (Usuario) session.getAttribute("user");
-		
-		plano.setUsuario(usuario);
-		plano.setRede(redeTemp);
 		
 		planoService.Add(plano);
 		

@@ -15,6 +15,11 @@
 	<div class="w3-container">
 		<h3>Lista de redes</h3>
 	</div>
+	
+	<br>
+	<a href="/rede/incluir">Inserir</a>
+	<br>
+	<br>
 	<table class="w3-table">
 		<tr>
 			<th>id</th>

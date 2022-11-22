@@ -11,6 +11,9 @@
 <body>
 
 	<c:import url="/WEB-INF/jsp/menu.jsp" />
+	
+	
+	<a href="/laboratorio/incluir">>Incluir</a>
 
 	<div class="w3-container">
 		<h3>Lista de laboratórios</h3>

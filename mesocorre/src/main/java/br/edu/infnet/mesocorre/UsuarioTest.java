@@ -53,16 +53,6 @@ public class UsuarioTest implements ApplicationRunner {
 		usuarioService.Add(u1);
 		usuarioService.Add(u2);
 		usuarioService.Add(u3);
-		
-		Plano p1 = new Plano(1,"plano 1", "endereco 1",null,null);
-		Plano p2 = new Plano(2,"plano 2", "endereco 2",null,null);
-		Plano p3 = new Plano(3,"plano 3", "endereco 3",null,null);
-		
-		p1.setUsuario(u1);
-		p2.setUsuario(u1);
-		p3.setUsuario(u1);
-		
-		planoService.Add(p1);
 
 	}
 	

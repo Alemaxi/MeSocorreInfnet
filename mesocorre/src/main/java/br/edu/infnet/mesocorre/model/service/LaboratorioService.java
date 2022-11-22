@@ -15,12 +15,11 @@ public class LaboratorioService {
 	ILaboratorioClient client;
 	
 	public void AddLab(Laboratorio lab) {
-		//repository.save(lab);
+		client.incluir(lab);
 	}
 
 	public Collection<Laboratorio> GetCollection() {
 		return client.listaLaboratorio();
-		//return (Collection<Laboratorio>) repository.findAll();
 	}
 
 	public void ExcluirUm(Integer id) {

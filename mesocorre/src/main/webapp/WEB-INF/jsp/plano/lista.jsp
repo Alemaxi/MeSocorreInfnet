@@ -20,13 +20,15 @@
 			<th>Nome</th>
 			<th>Acomodaçãoo</th>
 			<th>Rede</th>
+			<th>Usuario</th>
 			<th></th>
 		</tr>
 		<c:forEach var="plano" items="${listagem}">
 			<tr>
 				<td>${plano.nome}</td>
 				<td>${plano.acomodacao}</td>
-				<td>${plano.rede.id }</td>
+				<td>${plano.idRede }</td>
+				<td>${plano.idUsuario }</td>
 				<td><a href="/plano/${plano.id }/excluir">Excluir</a></td>
 			</tr>
 		</c:forEach>
